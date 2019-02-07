@@ -16,7 +16,6 @@ class App extends Component {
 
   componentDidMount() {
     this.api();
-    console.log('api')
   }
 
 
@@ -48,9 +47,10 @@ class App extends Component {
 
   /* ------ user input state ------ */
   inputChangedHandler = (event) => {
-   
+   console.log(event.target.value)
     this.setState( {
-      input: event.target.value
+      input: event.target.value,
+      list: []
     } )
   }
 
