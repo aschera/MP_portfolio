@@ -1,24 +1,24 @@
 .UserInput {
   display: flex;
   justify-content: flex-start;
-  padding: 1em;
+  padding: 1em 0;
 
 }
 
 .Button-wrapper {
   min-width: 20%;
-  padding: 1em;
+  padding: 1em 0;
 }
 
 .FilterButton {
   display: block;
-  width: 100%;
   font-family: inherit;
   font-size: 16px;
   font-weight: 500;
-  border: 2px solid #C8CCD4;
+  padding: 0.5em 0.7em;
+  border: 1px solid #C8CCD4;
+  border-radius: 3px;
   background: none;
-  border-radius: 0;
   color: #223254;
   transition: all .15s ease;
   cursor: pointer;

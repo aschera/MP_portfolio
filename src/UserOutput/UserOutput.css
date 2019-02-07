@@ -6,47 +6,50 @@ ol, ul {
 
 .UserOutput {
     display: flex;
-    border: 2px solid #C8CCD4;
+    border: 1px solid #C8CCD4;
     border-collapse: collapse;
+    min-height: 50vh;
 }
 
 .UserOutput ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    min-width: 50%;
+  
 }
 
 .UserOutput li {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: .5em 0;
-
-    width: 100%;
+    padding: 0.5em 0.7em;
     height: 2em;
-    border-bottom: 2px solid #C8CCD4;
+    border-bottom: 1px solid #C8CCD4;
+    cursor: pointer;
+    transition: all .15s ease;
 }
 
-.UserOutput li:last-child {
-    border-bottom: 2px solid transparent;
+.UserOutput li:hover {
+  background-color: lightpink;
 }
+
+
 
 .UserOutput span {
-    padding-right: 2em;
-    width: 20%;
+    flex: 1 1 auto;
     overflow: hidden;
     white-space: nowrap;
     text-align:center;
     line-height:2em;
     height:2em;
     font-size:12px;
+    text-align: left;
+    width:80px;
 }
 
 .UserOutput span:nth-child(2) {
-    width: 60%;
+    min-width:300px;
     text-align: left;
 }
 
@@ -57,11 +60,11 @@ ol, ul {
 .description {
     display: flex;
     justify-content: center;
-    align-items: center;
     align-content: center;
 
+    text-align: left;
     padding:  1em;
     width: 50%;
-    border-left: 2px solid #C8CCD4;
+    border-left: 1px solid #C8CCD4;
     border-collapse: collapse;
 }

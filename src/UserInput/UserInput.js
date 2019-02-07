@@ -13,7 +13,7 @@ const UserInput = ( props ) => {
                 <button 
                     className="FilterButton"
                     onClick={() => props.filterListHandler()}>
-                    Filter by ...
+                    Sort by ...
                 </button>
             </div>
                 

@@ -14,11 +14,22 @@ class App extends Component {
     url : 'https://star-wars-api.herokuapp.com/films'
   }
 
-  componentDidMount() {
+
+
+ componentDidMount() {
     this.api();
-  }
+    
+ }
+
+ RunWhenCreated(){
+	var ttt = document.getElementsByClassName('output-li');
+	for (let i=0;i<ttt.length;i++){
+		ttt[i].addEventListener('click', this.editUldDetails(this), false);
+	}
+}
 
 
+ 
 
   /* ------ button click ------ */
   filterListHandler = () => {
@@ -41,6 +52,7 @@ class App extends Component {
     this.setState( { 
       list : data
     } )
+    this.RunWhenCreated();
     
   }
 
@@ -85,6 +97,8 @@ class App extends Component {
         <UserOutput 
         output = {this.state.list} 
         movieInfo = {this.state.movieInfo}
+        createNode = {this.state.createNode}
+        append = {this.state.append}
         />  
 
       </div>
