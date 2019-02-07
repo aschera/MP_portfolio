@@ -10,7 +10,7 @@ class App extends Component {
   state = {
     input : '',
     list : [],
-    fetch: true,
+    movieInfo: 'No movie selected',
     url : 'https://star-wars-api.herokuapp.com/films'
   }
 
@@ -39,8 +39,7 @@ class App extends Component {
     console.log('display list')
     console.log(data)
     this.setState( { 
-      list : data,
-      fetch: false
+      list : data
     } )
     
   }
@@ -85,6 +84,7 @@ class App extends Component {
 
         <UserOutput 
         output = {this.state.list} 
+        movieInfo = {this.state.movieInfo}
         />  
 
       </div>

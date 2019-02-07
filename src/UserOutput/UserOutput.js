@@ -29,7 +29,7 @@ const UserOutput = ( props ) => {
            </ul>
 
            <div className="description">
-             No movie selected
+             <p>{props.movieInfo}</p>
            </div>
 
 
