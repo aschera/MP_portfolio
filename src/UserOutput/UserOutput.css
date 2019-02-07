@@ -1,0 +1,52 @@
+ol, ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.UserOutput {
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    border: 2px solid #C8CCD4;
+    border-collapse: collapse;
+}
+
+.UserOutput ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    padding:  1em;
+}
+
+.UserOutput li {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.UserOutput span {
+    padding-right: 2em;
+    width: 20%;
+}
+
+.UserOutput span:nth-child(2) {
+    width: 60%;
+    text-align: left;
+}
+
+.UserOutput span:nth-child(3) {
+    padding-right: 0;
+}
+
+.description {
+    padding:  1em;
+    width: 50%;
+    font-size: 16px;
+    font-weight: 500;
+    border-left: 2px solid #C8CCD4;
+    border-collapse: collapse;
+}
