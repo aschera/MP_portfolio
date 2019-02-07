@@ -31,18 +31,7 @@ class App extends Component {
 
  
 
-  /* ------ button click ------ */
-  filterListHandler = () => {
-    /*
-    this.setState( {
-      persons: [
-        { name: newName, age: 28 },
-        { name: 'Manu', age: 29 },
-        { name: 'Stephanie', age: 27 }
-      ]
-    } ) */
-    console.log('filter the list')
-  }
+  
 
   /* ------ update list state------ */
   listChangeHandler = (data) => {
@@ -91,7 +80,6 @@ class App extends Component {
        
         <UserInput 
         InputName = {this.inputChangedHandler}
-        filterListHandler = {this.filterListHandler}
         input = {this.state.input} />
 
         <UserOutput 
