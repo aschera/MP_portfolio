@@ -13,7 +13,6 @@ const UserOutput = ( props ) => {
            <ul id="output">
              {props.output.map(function(item) { 
                
-               console.log(item)
                     let li = createNode(
                         'li', 
                         'output-li', 
@@ -62,7 +61,6 @@ function editUldDetails(t, s, d) {
     const summary = document.getElementById('description-text');
     summary.innerHTML = `<h2>${t}</h2> <p>${s}</p> <p>Directed by: ${d}</p>`; 
 }
-
 
 /* ------ create list of nodes ------ */
 function append(parent, el) {

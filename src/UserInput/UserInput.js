@@ -1,18 +1,18 @@
 import React from 'react';
-
+import SortSelect from './SortSelect';
 import './UserInput.css';
 
 const UserInput = ( props ) => {
-
+    function filterListHandler(e) {
+        let filter = e.target.value;
+        props.filterListHandler(filter);
+      }
+    
     return (
         <div className="UserInput">
 
-            <div className="Button-wrapper">
-              <ReactExample name="fruit" value='Sort by ...' />
-            </div>
-
+            <SortSelect filterListHandler = {filterListHandler}/>
             
-                
             <div className="Input-wrapper">
                 <label className="inp">
                         <input 
@@ -29,36 +29,4 @@ const UserInput = ( props ) => {
     )
 };
 
-
-
 export default UserInput;
-
-/* ------ button click ------ */
-function filterListHandler() {
-    /*
-    this.setState( {
-      persons: [
-        { name: newName, age: 28 },
-        { name: 'Manu', age: 29 },
-        { name: 'Stephanie', age: 27 }
-      ]
-    } ) */
-    console.log('filter the list')
-  }
-
-export const ReactExample = ( props) => (
-    
-
-        
-            <label className="FilterButton">
-            Pick your favorite flavor:
-            <select value='' onChange={filterListHandler}>
-                <option value="grapefruit">Grapefruit</option>
-                <option value="lime">Lime</option>
-                <option value="coconut">Coconut</option>
-                <option value="mango">Mango</option>
-            </select>
-            </label>
-       
-
-  )

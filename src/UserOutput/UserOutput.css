@@ -6,9 +6,17 @@ ol, ul {
 
 .UserOutput {
     display: flex;
+    flex-direction: column;
     border: 1px solid #C8CCD4;
     border-collapse: collapse;
     min-height: 50vh;
+    transition: all .15s ease;
+}
+
+@media screen and (min-width: 767px) { 
+    .UserOutput {
+        flex-direction: row;
+    }
 }
 
 .UserOutput ul {
@@ -27,14 +35,19 @@ ol, ul {
     height: 2em;
     border-bottom: 1px solid #C8CCD4;
     cursor: pointer;
+    font-size: .7em;
     transition: all .15s ease;
+}
+
+@media screen and (min-width: 767px) { 
+    .UserOutput li  {
+        font-size: 1em;
+    }
 }
 
 .UserOutput li:hover {
   background-color: lightpink;
 }
-
-
 
 .UserOutput span {
     flex: 1 1 auto;
@@ -49,9 +62,16 @@ ol, ul {
 }
 
 .UserOutput span:nth-child(2) {
-    min-width:300px;
+    min-width:60%;
     text-align: left;
+    transition: all .15s ease;
 }
+@media screen and (min-width: 767px) { 
+    .UserOutput span:nth-child(2) {
+        min-width:300px;
+    }
+}
+
 
 .UserOutput span:nth-child(3) {
     padding-right: 0;
@@ -67,4 +87,16 @@ ol, ul {
     width: 50%;
     border-left: 1px solid #C8CCD4;
     border-collapse: collapse;
+}
+
+.description h2 {
+    margin-top: 0;
+}
+
+.output-span {
+    min-width: 62px;
+}   
+
+.output-span:nth-child(2) {
+    padding-left: 0.5em;
 }

@@ -11,57 +11,53 @@ class App extends Component {
     input : '',
     list : [],
     movieInfo: 'No movie selected',
+    filter: '',
     url : 'https://star-wars-api.herokuapp.com/films'
   }
 
+  componentDidMount() {
+    this.api();  
+  }
 
+  RunWhenCreated(){
+  var ttt = document.getElementsByClassName('output-li');
+    try {
+      for (let i=0;i<ttt.length;i++){
+        ttt[i].addEventListener('click', this.editUldDetails(this), false);
+      }
+    } catch (e) {
+      console.log('error ' + e)
+    }
+	  
+  }
 
- componentDidMount() {
-    this.api();
-    
- }
+  filterListHandler = (e) => {
+    this.setState( { 
+      filter : e,
+      list: []
+    } )
+    console.log('filter the list', e)
+  }
 
- RunWhenCreated(){
-	var ttt = document.getElementsByClassName('output-li');
-	for (let i=0;i<ttt.length;i++){
-		ttt[i].addEventListener('click', this.editUldDetails(this), false);
-	}
-}
-
-
- 
-
-  
-
-  /* ------ update list state------ */
   listChangeHandler = (data) => {
-
-    console.log('display list')
-    console.log(data)
     this.setState( { 
       list : data
     } )
     this.RunWhenCreated();
-    
   }
 
-  /* ------ user input state ------ */
   inputChangedHandler = (event) => {
-   console.log(event.target.value)
     this.setState( {
       input: event.target.value,
       list: []
     } )
   }
 
-  /* ------ API call ------ */
   api() {
     let _this = this;
-
     fetch(this.state.url) 
     .then((resp) => resp.json())
     .then(function(data) {
-      console.log('data fetched')
       _this.listChangeHandler(data);
     })
     .catch(function(e) {
@@ -69,18 +65,16 @@ class App extends Component {
     });
   }
 
-   
-
   render () {
     
-
     return (
       <div className="App">
         <h1>Star Wars movies</h1>
        
         <UserInput 
         InputName = {this.inputChangedHandler}
-        input = {this.state.input} />
+        input = {this.state.input} 
+        filterListHandler = {this.filterListHandler} />
 
         <UserOutput 
         output = {this.state.list} 
@@ -94,7 +88,5 @@ class App extends Component {
     
   }
 }
-
-
 
 export default App;

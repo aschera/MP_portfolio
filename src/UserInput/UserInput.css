@@ -15,7 +15,7 @@
   font-family: inherit;
   font-size: 16px;
   font-weight: 500;
-  padding: 0.5em 0.7em;
+  padding: 0.6em 1.5em;
   border: 1px solid #C8CCD4;
   border-radius: 3px;
   background: none;
@@ -112,4 +112,13 @@ input:focus  + span {
 
 input:focus   + .border {  
     transform: scaleX(1);
+}
+
+select {
+    border-radius: 0px;
+    border-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
 }
