@@ -12,8 +12,7 @@ class App extends Component {
     input : '',
     list : [],
     movieInfo: 'No movie selected',
-    filter: '',
-    filterOptions : ['Episode', 'Year'],
+    filterOptions : ['Sort by...', 'Episode', 'Year'],
     url : 'https://star-wars-api.herokuapp.com/films'
   }
 
@@ -35,7 +34,7 @@ class App extends Component {
 
   filterListHandler = (e) => {
 
-    let currentFilter = '';
+    let currentFilter = this.state.filter;
     let result = [];
     let data = this.state.list;
 
@@ -43,18 +42,30 @@ class App extends Component {
     document.getElementById('output').innerHTML = '';
 
     /* edit filter*/
+    if(e === 'Sort by...') {
+      this.api();
+    }
     if(e === 'Year') {
       currentFilter = 'release_date';
-      console.log(currentFilter )
+      this.setState( {
+        filter: currentFilter,
+        list: []
+      } )
+
       result = data.sort(function (a, b) {
         let current = a.fields[currentFilter].slice(0, 4);
         let next = b.fields[currentFilter].slice(0, 4);
         return current - next;
       });
     }
-    else if(e === 'Episode') {
+
+    if(e === 'Episode') {
       currentFilter = 'episode_id';
-      console.log(currentFilter )
+      this.setState( {
+        filter: currentFilter,
+        list: []
+      } )
+
       result = data.sort(function (a, b) {
         return a.fields[currentFilter] - b.fields[currentFilter];
       });
@@ -80,6 +91,13 @@ class App extends Component {
       input: event.target.value,
       list: []
     } )
+
+    let currentFilter = 'title';
+    let data = this.state.list;
+    
+    //string.includes(substring);
+
+    console.log ( this.state.list)
   }
 
   api() {

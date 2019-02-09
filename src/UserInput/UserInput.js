@@ -14,7 +14,7 @@ const UserInput = ( props ) => {
             <form className="FilterButton" >
                 <select 
                 onChange={filterclick}>
-                    <option value="" disabled>Sort by...</option>
+                    
                     {
                     props.filterOptions.map(function(item) {
                         return <option key={item} value={item}>
