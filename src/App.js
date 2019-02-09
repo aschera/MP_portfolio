@@ -36,41 +36,41 @@ class App extends Component {
   filterListHandler = (e) => {
 
     let currentFilter = '';
+    let result = [];
     let data = this.state.list;
 
-    var sortable = [];
-    for (var item in data) {
-        sortable.push([item, data[item]]);
-    }
-
-    let result = [];
-
     /* clear list in DOM*/
-    //document.getElementById('output').innerHTML = '';
+    document.getElementById('output').innerHTML = '';
 
     /* edit filter*/
     if(e === 'Year') {
       currentFilter = 'release_date';
       console.log(currentFilter )
-
+      result = data.sort(function (a, b) {
+        let current = a.fields[currentFilter].slice(0, 4);
+        let next = b.fields[currentFilter].slice(0, 4);
+        return current - next;
+      });
     }
     else if(e === 'Episode') {
       currentFilter = 'episode_id';
       console.log(currentFilter )
+      result = data.sort(function (a, b) {
+        return a.fields[currentFilter] - b.fields[currentFilter];
+      });
     }
 
-   
-     
-
-      console.log(sortable[0][1].fields[currentFilter])
+    this.setState( { 
+      list : result
+    } )
 
   }
 
- 
-
   listChangeHandler = (data) => {
+    var myarray = Array.prototype.slice.call(data, 1);
+    
     this.setState( { 
-      list : data
+      list : myarray
     } )
     this.RunWhenCreated();
   }
