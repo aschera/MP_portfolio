@@ -8,10 +8,12 @@ import UserOutput from './UserOutput/UserOutput';
 
 class App extends Component {
   state = {
+    title: 'Star wars movies',
     input : '',
     list : [],
     movieInfo: 'No movie selected',
     filter: '',
+    filterOptions : ['Episode', 'Year'],
     url : 'https://star-wars-api.herokuapp.com/films'
   }
 
@@ -32,12 +34,39 @@ class App extends Component {
   }
 
   filterListHandler = (e) => {
-    this.setState( { 
-      filter : e,
-      list: []
-    } )
-    console.log('filter the list', e)
+
+    let currentFilter = '';
+    let data = this.state.list;
+
+    var sortable = [];
+    for (var item in data) {
+        sortable.push([item, data[item]]);
+    }
+
+    let result = [];
+
+    /* clear list in DOM*/
+    //document.getElementById('output').innerHTML = '';
+
+    /* edit filter*/
+    if(e === 'Year') {
+      currentFilter = 'release_date';
+      console.log(currentFilter )
+
+    }
+    else if(e === 'Episode') {
+      currentFilter = 'episode_id';
+      console.log(currentFilter )
+    }
+
+   
+     
+
+      console.log(sortable[0][1].fields[currentFilter])
+
   }
+
+ 
 
   listChangeHandler = (data) => {
     this.setState( { 
@@ -69,18 +98,22 @@ class App extends Component {
     
     return (
       <div className="App">
-        <h1>Star Wars movies</h1>
+
+        <h1>{this.state.title}</h1>
+
+        active filter: {this.state.filter}
        
         <UserInput 
-        InputName = {this.inputChangedHandler}
-        input = {this.state.input} 
+        InputName         = {this.inputChangedHandler}
+        input             = {this.state.input} 
+        filterOptions     = {this.state.filterOptions}
         filterListHandler = {this.filterListHandler} />
 
         <UserOutput 
-        output = {this.state.list} 
-        movieInfo = {this.state.movieInfo}
-        createNode = {this.state.createNode}
-        append = {this.state.append}
+        output            = {this.state.list} 
+        movieInfo         = {this.state.movieInfo}
+        createNode        = {this.state.createNode}
+        append            = {this.state.append}
         />  
 
       </div>

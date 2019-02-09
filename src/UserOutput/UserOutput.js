@@ -12,27 +12,37 @@ const UserOutput = ( props ) => {
 
            <ul id="output">
              {props.output.map(function(item) { 
-               
+
+                try {
                     let li = createNode(
-                        'li', 
-                        'output-li', 
-                        item.id, 
-                        item.fields.opening_crawl, 
-                        item.fields.title,
-                        item.fields.director
-                        ), 
-                        id = createNode('span', 'output-span'),
-                        title = createNode('span', 'output-span'),
-                        date = createNode('span', 'output-span');
+                    'li', 
+                    'output-li', 
+                    item.id, 
+                    item.fields.opening_crawl, 
+                    item.fields.title,
+                    item.fields.director
+                    ), 
+                    id = createNode('span', 'output-span'),
+                    title = createNode('span', 'output-span'),
+                    date = createNode('span', 'output-span');
 
                     id.innerHTML = ` Episode ${item.fields.episode_id} `; 
                     title.innerHTML = ` ${item.fields.title}  `; 
                     date.innerHTML = ` ${item.fields.release_date}`; 
-                   
+                    
                     append(li, id);
                     append(li, title);
                     append(li, date);
                     append(ul, li);  
+
+                    return true
+                }
+                catch(error) {
+                    console.error(error);
+                    return false
+                }
+               
+                    
              })}
            </ul>
 

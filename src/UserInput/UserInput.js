@@ -1,17 +1,30 @@
 import React from 'react';
-import SortSelect from './SortSelect';
 import './UserInput.css';
 
 const UserInput = ( props ) => {
-    function filterListHandler(e) {
-        let filter = e.target.value;
-        props.filterListHandler(filter);
-      }
-    
+
+    function filterclick(e) {
+        let eventValue = e.target.value;
+        props.filterListHandler(eventValue);
+    }
+
     return (
         <div className="UserInput">
 
-            <SortSelect filterListHandler = {filterListHandler}/>
+            <form className="FilterButton" >
+                <select 
+                onChange={filterclick}>
+                    <option value="" disabled>Sort by...</option>
+                    {
+                    props.filterOptions.map(function(item) {
+                        return <option key={item} value={item}>
+                            {item}
+                        </option>
+                        ;
+                    })
+                    }
+                </select>
+            </form>
             
             <div className="Input-wrapper">
                 <label className="inp">
@@ -28,5 +41,7 @@ const UserInput = ( props ) => {
         </div>
     )
 };
+
+
 
 export default UserInput;

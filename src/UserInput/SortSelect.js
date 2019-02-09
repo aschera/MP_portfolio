@@ -1,13 +1,28 @@
 import React from 'react';
 
+const filterOptions = ['Episode', 'Year'];
+
 const SortSelect = ( props) => (
-    <label className="FilterButton" >
-        <select value='' onChange={props.filterListHandler}>
-            <option value="">Sort by...</option>
-            <option value="Episode">Episode</option>
-            <option value="Year">Year</option>
+    
+    <form className="FilterButton" >
+        <select 
+        defaultValue="" 
+        required value='' 
+        onChange={props.filterListHandler}>
+            <option value="" disabled>Sort by...</option>
+            {
+            filterOptions.map(function(item) {
+                return <option key={this.props.activeFilter} value={this.props.activeFilter}>
+                    {this.props.activeFilter}
+                </option>
+                ;
+            })
+            }
         </select>
-    </label>
+    </form>
+
+    
+
 )
 
 export default SortSelect;
