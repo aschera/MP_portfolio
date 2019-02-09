@@ -29,6 +29,8 @@ const UserOutput = ( props ) => {
                     id.innerHTML = ` Episode ${item.fields.episode_id} `; 
                     title.innerHTML = ` ${item.fields.title}  `; 
                     date.innerHTML = ` ${item.fields.release_date}`; 
+                   
+                   
                     
                     append(li, id);
                     append(li, title);

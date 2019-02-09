@@ -1,8 +1,16 @@
 .UserInput {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   padding: 1em 0;
+  text-align: left;
+  transition: all .15s ease;
+}
 
+@media screen and (min-width: 767px) { 
+  .UserInput {
+    flex-direction: row;
+  }
 }
 
 .Button-wrapper {
@@ -11,29 +19,18 @@
 }
 
 .FilterButton {
-  display: block;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 0.6em 1.5em;
-  border: 1px solid #C8CCD4;
-  border-radius: 3px;
-  background: none;
-  color: #223254;
-  transition: all .15s ease;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  height: 3em;
+  margin: 0;
+  margin-right: 1em;
+  padding: 0;
   cursor: pointer;
+  transition: all .15s ease;
+  
 }
 
-.Input-wrapper {
-  min-width: 60%;
-  padding: 1em;
-}
-
-.inp {
-    position: relative;
-    margin: 0;
-    width: 100%;
-}
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: transparent;
@@ -48,77 +45,61 @@
   color: transparent;
 }
 
-.inp .label {
-      position: absolute;
-      top: 0px;
-      left: 0;
-      font-size: 16px;
-      color: #9098A9;
-      font-weight: 500;
-      transform-origin: 0 0;
-      transition: all .2s ease;
-}
-
-.border {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background :#0077FF;
-    transform: scaleX(0);
-    transform-origin: 0 0;
-    transition: all .15s ease;
-}
-    
-input {
-    -webkit-appearance: none;
-    width: 100%;
-    border: 0;
-    font-family: inherit;
-    padding: 0;
-    height: 20px;
-    font-size: 16px;
-    font-weight: 500;
-    border-bottom: 2px solid #C8CCD4;
-    background: none;
-    border-radius: 0;
-    color: #223254;
-    transition: all .15s ease;
-}
- 
-input:hover {
-    background: rgba(#223254,.03);
-}
-
-input:focus {
-    top: 10px;
-}
-     
-input:not(:placeholder-shown) + span {
-    color: #5A667F;
-    transform: translateY(-26px) scale(.75);
-}
-            
-input:focus {
-    background: none;
-    outline: none;
-}
-
-input:focus  + span {
-    color: #0077FF;
-        transform: translateY(-26px) scale(.75);
-}  
-
-input:focus   + .border {  
-    transform: scaleX(1);
-}
-
 select {
-    border-radius: 0px;
-    border-color: transparent;
+    height: 2.7em;
+    background-color: transparent;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding:0 1.3em;
     -webkit-appearance: none;
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
+}
+
+
+/* search icon */
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+.search {
+  position: relative;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  color: #aaa;
+  font-size: 16px;
+  margin: 0;
+  width: 100%;
+  transition: all .15s ease;
+}
+
+@media screen and (min-width: 767px) { 
+  .search {
+  }
+}
+
+.search input {
+  height: 2em;
+  text-indent: 3em !important;
+  background-color: transparent;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+  transition: all .15s ease;
+}
+
+@media screen and (min-width: 767px) { 
+  .search input {
+  
+  }
+}
+
+.search input { text-indent: 32px;}
+.search .fa-search { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  margin-top: 1em;
 }

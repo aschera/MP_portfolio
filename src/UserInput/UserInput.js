@@ -26,18 +26,18 @@ const UserInput = ( props ) => {
                 </select>
             </form>
             
-            <div className="Input-wrapper">
-                <label className="inp">
-                        <input 
+            <div class="search">
+                <span class="fa fa-search"></span>
+                <input 
+                        className="search"
                         id="inp" 
                         type="text" 
                         onChange={props.InputName} 
                         placeholder={props.input}
                         />
-                        <span className="label">Type to search</span>
-                        <span className="border"></span>
-                </label>
+                        
             </div>
+    
         </div>
     )
 };

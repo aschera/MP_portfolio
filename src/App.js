@@ -87,17 +87,33 @@ class App extends Component {
   }
 
   inputChangedHandler = (event) => {
+
+    let currentFilter = event.target.value;
+    let data = this.state.list;
+    let result = [];
+
+    /* clear list in DOM*/
+    document.getElementById('output').innerHTML = '';
+    let query = document.getElementById('filter')
+    query.innerHTML = ` ${currentFilter} <i class="fas fa-times"></i>`; 
+    query.setAttribute("style", 
+    "color:red; border: 1px solid blue; padding: 0.7em");
+ 
+    for (let i = 0; i < data.length; i++) {
+      var str = data[i].fields.title;
+      var n = str.search(currentFilter);
+      console.log(n);
+      if(n !== -1) {
+        result.push(data[i])
+      }
+    }
+    console.log(result)
+
     this.setState( {
-      input: event.target.value,
-      list: []
+      input: currentFilter,
+      list: result
     } )
 
-    let currentFilter = 'title';
-    let data = this.state.list;
-    
-    //string.includes(substring);
-
-    console.log ( this.state.list)
   }
 
   api() {
@@ -119,7 +135,9 @@ class App extends Component {
 
         <h1>{this.state.title}</h1>
 
-        active filter: {this.state.filter}
+        <div className="ActiveFilter">
+          <span id="filter"></span>
+        </div>
        
         <UserInput 
         InputName         = {this.inputChangedHandler}

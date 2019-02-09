@@ -84,8 +84,8 @@ ol, ul {
 
     text-align: left;
     padding:  1em;
+    border: 1px solid transparent;
     
-    border-left: 1px solid #C8CCD4;
     border-collapse: collapse;
     transition: all .15s ease;
 }
@@ -93,6 +93,7 @@ ol, ul {
 @media screen and (min-width: 767px) { 
     .description { 
         width: 50%;
+        border: 1px solid #C8CCD4;
     }
 }
 
