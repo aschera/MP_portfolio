@@ -8,30 +8,22 @@ const UserInput = ( props ) => {
         props.filterListHandler(eventValue);
     }
 
-
-
     return (
-        <ul className="UserInput">
+        <div className="UserInput">
 
-            <nav className="FilterButton navigation" >
-                <ul
-                onChange={filterclick}
-                id="menu"
-                className='mainmenu'>
-                    <li>Sort by...
-                        <ul className="submenu">
+            <div className="FilterButton" >
+                        <select className="submenu" onChange={filterclick}>
                         {
                         props.filterOptions.map(function(item) {
-                            return <li key={item} value={item}>
-                               <a href='#'> {item} </a>
-                            </li>
+                            return <option key={item} value={item}>
+                               {item}
+                            </option>
                             ;
                         })
                         }
-                        </ul>
-                    </li>  
-                </ul>
-            </nav>
+                        </select>
+                 
+            </div>
             
             <div className="search">
                 <span className="fa fa-search"></span>
@@ -45,7 +37,7 @@ const UserInput = ( props ) => {
                         
             </div>
     
-        </ul>
+        </div>
     )
 };
 

@@ -76,97 +76,27 @@
       text-indent: 1px;
       text-overflow: '';
   }
+  select {
+    //background-image:url(../images/arrow.png);
+    background-repeat:no-repeat;
+    background-position:300px;
+    width: 200px;
+    line-height:1;
+    border-radius:5px;
+    outline:none
+    }
+    option:hover {
+      background-color:@hover;
+    }
 
-
-  /* define a fixed width for the entire menu */
-.navigation {
-  width: 150px;
-  position: relative;
-  z-index: 50000;
-}
-
-/* reset our lists to remove bullet points and padding */
-.mainmenu, .submenu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.mainmenu  {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.submenu {
-  width: 200px;
-  border-radius: 5px;
-  background-color: @color-white;
-  box-shadow: @box-shadow ;
-}
-
-/* make ALL links (main and submenu) have padding and background color */
-.mainmenu a {
-  display: block;
-  text-decoration: none;
-  padding: 10px;
-}
-
-.mainmenu .submenu {
-  height: 0;
-}
-
-.mainmenu .submenu li {
-  border-bottom: 1px solid black;
-  
-}
-
-.mainmenu .submenu li:last-child {
-  border: none;
-}
-
-.mainmenu .submenu li:first-child {
-  color: black;
-  font-weight: 700;
-}
-
-/* add hover behaviour */
-.mainmenu a:hover {
-  
-}
-
-
-/* when hovering over a .mainmenu item,
-  display the submenu inside it.
-  we're changing the submenu's max-height from 0 to 200px;
-*/
-
-.mainmenu li:hover .submenu {
-  display: inline-block;
-  height: 200px;
-}
-
-/*
-  we now overwrite the background-color for .submenu links only.
-  CSS reads down the page, so code at the bottom will overwrite the code at the top.
-*/
-
-.submenu a {
-  background-color: @color-white;
-}
-
-/* hover behaviour for links inside .submenu */
-.submenu a:hover {
-  background-color: @hover;
-}
-
-/* this is the initial state of all submenus.
-  we set it to max-height: 0, and hide the overflowed content.
-*/
-.submenu {
-  overflow: hidden;
-  -webkit-transition: all 0.5s ease-out;
-}
+    select span {
+      border-radius:5px;
+      font-weight: normal;
+      display: block;
+      white-space: pre;
+      min-height: 2em;
+      padding: 15px 20px 10px;
+    }
 
 
 

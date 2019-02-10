@@ -12,14 +12,13 @@ class App extends Component {
     input : '',
     list : [],
     movieInfo: 'No movie selected',
-    filterOptions : ['Sort by...', 'Episode', 'Year'],
+  filterOptions : [ 'Sort by...', 'Episode', 'Year'],
     url : 'https://star-wars-api.herokuapp.com/films'
   }
 
 
   componentDidMount() {
     this.api();
-
   }
 
   RunWhenCreated(){
@@ -89,25 +88,32 @@ class App extends Component {
   inputChangedHandler = (event) => {
 
     let currentFilter = event.target.value;
+    currentFilter = currentFilter.toLowerCase();
+
     let data = this.state.list;
     let result = [];
 
     /* clear list in DOM*/
     document.getElementById('output').innerHTML = '';
+
+    /*
     let query = document.getElementById('filter')
     query.innerHTML = ` ${currentFilter} <i class="fas fa-times"></i>`; 
     query.setAttribute("style", 
     "color:red; border: 1px solid blue; padding: 0.7em");
+    */
  
     for (let i = 0; i < data.length; i++) {
       var str = data[i].fields.title;
+      str = str.toLowerCase();
       var n = str.search(currentFilter);
-      console.log(n);
       if(n !== -1) {
         result.push(data[i])
       }
+      if(currentFilter === '') {
+        this.api();
+      }
     }
-    console.log(result)
 
     this.setState( {
       input: currentFilter,
@@ -121,7 +127,6 @@ class App extends Component {
     fetch(this.state.url) 
     .then((resp) => resp.json())
     .then(function(data) {
-      console.log(data)
       _this.listChangeHandler(data);
     })
     .catch(function(e) {
