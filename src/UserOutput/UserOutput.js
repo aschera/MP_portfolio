@@ -1,16 +1,14 @@
 import React from 'react';
-
 import './UserOutput.css';
 
 const UserOutput = ( props ) => {
 
     const ul = document.getElementById('output');
     
-
     return (
         <div className="UserOutput">
 
-           <ul id="output">
+           <ul id="output" className="Output">
              {props.output.map(function(item) { 
 
                 try {
@@ -22,6 +20,7 @@ const UserOutput = ( props ) => {
                     item.fields.title,
                     item.fields.director
                     ), 
+
                     id = createNode('span', 'output-span'),
                     title = createNode('span', 'output-span'),
                     date = createNode('span', 'output-span');
@@ -71,7 +70,7 @@ function createNode(element, elClass, id, summary, title, director) {
 
 function editUldDetails(t, s, d) {
     const summary = document.getElementById('description-text');
-    summary.innerHTML = `<h2>${t}</h2> <p>${s}</p> <p>Directed by: ${d}</p>`; 
+    summary.innerHTML = `<h2 class="h1">${t}</h2> <p>${s}</p> <p>Directed by: ${d}</p>`; 
 }
 
 /* ------ create list of nodes ------ */

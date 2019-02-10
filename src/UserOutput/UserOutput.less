@@ -1,0 +1,143 @@
+@content-min-height:       50vh;
+@baseline:                 10px;
+@base-line-height:          2em;
+@content-padding:           1em;
+
+// List
+@column-sm-min-width:          62px;
+
+@column-lg-width:             300px;
+@colum-lg-min-height          :400px;
+@collum-lg--min-width:          50%;
+
+
+// Colors:
+@grey               :#C8CCD4;
+@hover              :#ffbbaaee;
+@color-black        :#28405D; 
+@font               :#47596D;
+
+
+
+@box-shadow                   : ´0 0 3px #ccc, 0 10px 15px #ebebeb inset´;
+@transition                   : ´all .15s ease´;
+
+
+/* -------------------------------------- */
+
+ol, ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.UserOutput {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid @grey;
+    border-collapse: collapse;
+    min-height: @content-min-height;
+    transition: @transition;
+}
+
+@media screen and (min-width: 830px) { 
+    .UserOutput {
+        flex-direction: row;
+    }
+}
+
+.Output {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    transition: @transition;
+}
+
+@media screen and (min-width: 767px) { 
+    .Output {
+      width: 50%;
+      min-height: @colum-lg-min-height;
+    }
+}
+
+.UserOutput li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: @content-padding*0.5 @content-padding*0.7;
+    height: @base-line-height*1.5;
+    border-bottom: 1px solid @grey;
+    cursor: pointer;
+    transition: @transition;
+}
+
+.UserOutput li:hover {
+  background-color: @hover;
+}
+
+.UserOutput span {
+    flex: 1 1 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align:center;
+    line-height: @base-line-height;
+    height: @base-line-height;
+    text-align: left;  
+}
+
+.UserOutput span:nth-child(2) {
+    width: 60%;
+    text-align: left;
+    overflow: hidden;
+    transition: @transition;
+}
+@media screen and (min-width: 767px) { 
+    .UserOutput span:nth-child(2) {
+        min-width: @column-sm-min-width;
+    }
+}
+
+.UserOutput span:nth-child(3) {
+    padding-right: 0;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    text-align: left;
+    padding:  @content-padding;
+    border: 1px solid transparent;
+    
+    border-collapse: collapse;
+    transition: @transition;
+}
+@media screen and (min-width: 767px) { 
+    .description { 
+        width: @collum-lg--min-width;
+        border: 1px solid @grey;
+    }
+}
+
+.description h2 {
+    margin: 0;
+    margin-bottom: @content-padding*0.5; 
+}
+
+.h1 {
+    font-size: 25px;
+    font-family: 'Karla', sans-serif;
+    color: @color-black;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.description p {
+    line-height: 25px;
+    font-size: 16px;
+    margin-bottom: @content-padding;
+}

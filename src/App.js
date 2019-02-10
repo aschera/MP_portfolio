@@ -16,8 +16,10 @@ class App extends Component {
     url : 'https://star-wars-api.herokuapp.com/films'
   }
 
+
   componentDidMount() {
-    this.api();  
+    this.api();
+
   }
 
   RunWhenCreated(){
@@ -78,10 +80,8 @@ class App extends Component {
   }
 
   listChangeHandler = (data) => {
-    var myarray = Array.prototype.slice.call(data, 1);
-    
     this.setState( { 
-      list : myarray
+      list : data
     } )
     this.RunWhenCreated();
   }
@@ -121,19 +121,21 @@ class App extends Component {
     fetch(this.state.url) 
     .then((resp) => resp.json())
     .then(function(data) {
+      console.log(data)
       _this.listChangeHandler(data);
     })
     .catch(function(e) {
       console.log(e)
     });
   }
+  
 
   render () {
     
     return (
       <div className="App">
 
-        <h1>{this.state.title}</h1>
+        <h1 className="h1 title">{this.state.title}</h1>
 
         <div className="ActiveFilter">
           <span id="filter"></span>

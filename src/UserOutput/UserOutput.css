@@ -1,111 +1,103 @@
-ol, ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* -------------------------------------- */
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-
 .UserOutput {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #C8CCD4;
-    border-collapse: collapse;
-    min-height: 50vh;
-    transition: all .15s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #C8CCD4;
+  border-collapse: collapse;
+  min-height: 50vh;
+  transition: ´all .15s ease´;
 }
-
-@media screen and (min-width: 767px) { 
-    .UserOutput {
-        flex-direction: row;
-    }
-}
-
-.UserOutput ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-  
-}
-
-.UserOutput li {
-    display: flex;
+@media screen and (min-width: 830px) {
+  .UserOutput {
     flex-direction: row;
-    padding: 0.5em 0.7em;
-    height: 2em;
-    border-bottom: 1px solid #C8CCD4;
-    cursor: pointer;
-    font-size: .7em;
-    transition: all .15s ease;
+  }
 }
-
-@media screen and (min-width: 767px) { 
-    .UserOutput li  {
-        font-size: 1em;
-    }
+.Output {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  transition: ´all .15s ease´;
 }
-
+@media screen and (min-width: 767px) {
+  .Output {
+    width: 50%;
+    min-height: 400px;
+  }
+}
+.UserOutput li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5em 0.7em;
+  height: 3em;
+  border-bottom: 1px solid #C8CCD4;
+  cursor: pointer;
+  transition: ´all .15s ease´;
+}
 .UserOutput li:hover {
-  background-color: lightpink;
+  background-color: #ffbbaaee;
 }
-
 .UserOutput span {
-    flex: 1 1 auto;
-    overflow: hidden;
-    white-space: nowrap;
-    text-align:center;
-    line-height:2em;
-    height:2em;
-    font-size:12px;
-    text-align: left;
-    width:80px;
+  flex: 1 1 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 2em;
+  height: 2em;
+  text-align: left;
 }
-
 .UserOutput span:nth-child(2) {
-    min-width:60%;
-    text-align: left;
-    transition: all .15s ease;
+  width: 60%;
+  text-align: left;
+  overflow: hidden;
+  transition: ´all .15s ease´;
 }
-@media screen and (min-width: 767px) { 
-    .UserOutput span:nth-child(2) {
-        min-width:300px;
-    }
-}
-
-
-.UserOutput span:nth-child(3) {
-    padding-right: 0;
-}
-
-.description {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-
-    text-align: left;
-    padding:  1em;
-    border: 1px solid transparent;
-    
-    border-collapse: collapse;
-    transition: all .15s ease;
-}
-
-@media screen and (min-width: 767px) { 
-    .description { 
-        width: 50%;
-        border: 1px solid #C8CCD4;
-    }
-}
-
-
-.description h2 {
-    margin-top: 0;
-}
-
-.output-span {
+@media screen and (min-width: 767px) {
+  .UserOutput span:nth-child(2) {
     min-width: 62px;
-}   
-
-.output-span:nth-child(2) {
-    padding-left: 0.5em;
+  }
+}
+.UserOutput span:nth-child(3) {
+  padding-right: 0;
+}
+.description {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: left;
+  padding: 1em;
+  border: 1px solid transparent;
+  border-collapse: collapse;
+  transition: ´all .15s ease´;
+}
+@media screen and (min-width: 767px) {
+  .description {
+    width: 50%;
+    border: 1px solid #C8CCD4;
+  }
+}
+.description h2 {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+.h1 {
+  font-size: 25px;
+  font-family: 'Karla', sans-serif;
+  color: #28405D;
+  font-weight: 600;
+  line-height: 22px;
+}
+.description p {
+  line-height: 25px;
+  font-size: 16px;
+  margin-bottom: 1em;
 }

@@ -1,0 +1,110 @@
+
+@content-width:       980px;
+
+
+@content-min-height:       50vh;
+@baseline:                 10px;
+@base-line-height:          2em;
+@content-padding:           1em;
+
+// List
+@column-sm-min-width:          62px;
+
+@column-lg-width:             300px;
+@collum-lg--min-width:          60%;
+
+
+// Colors:
+@grey               :#C8CCD4;
+@hover              :#ffbbaaee;
+@color-black        :#28405D; 
+@font               :#47596D;
+
+
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+  font: inherit;
+  font-family: 'Karla', sans-serif;
+  color: @font;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ----------------------------------------------- */
+/* ----------------------------------------------- */
+
+
+.App {
+  text-align: center;
+  max-width: @content-width;
+  min-width: @content-width*0.5;
+  margin: 0 auto;
+  padding: 0  @content-padding;
+  line-height: @base-line-height;
+  transition: all .15s ease;
+}
+
+@media screen and (min-width: 767px) { 
+  .App {
+    padding: 0  @content-padding*0.5;
+  }
+}
+
+.title {
+    margin-top: @content-padding*2;
+}
+
+.ActiveFilter span {
+  width: 100px;
+  min-height: 0;
+}
+
+.fa-times {
+  padding-left:@content-padding*1.5;
+}

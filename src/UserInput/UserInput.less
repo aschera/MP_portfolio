@@ -1,0 +1,213 @@
+@baseline                     : 10px;
+@button-width                 : 20%;
+@button-height                : 3em;
+
+@seach-input-wrapper-height   : 3em;
+@seach-input--height          : 2em;
+
+
+@content-padding              : 1em;
+
+@box-shadow                   : ´0 0 3px #ccc, 0 10px 15px #ebebeb inset´;
+@transition                   : ´all .15s ease´;
+
+
+// Colors:
+@color-white        :#fff;
+@grey               :#C8CCD4;
+@hover              :#ffbbaaee;
+@color-black        :#28405D; 
+@font               :#47596D;
+
+
+/* --------------------------------------------------------------- */
+
+
+.UserInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1em 0;
+    text-align: left;
+    transition: @transition ;
+  }
+  
+  @media screen and (min-width: 767px) { 
+    .UserInput {
+      flex-direction: row;
+    }
+  }
+  
+
+  .FilterButton {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: @button-height;
+    margin: 0;
+    margin-right: @content-padding;
+    padding: 0;
+    cursor: pointer;
+    transition: @transition;
+    
+  }
+  
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: transparent;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: transparent;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: transparent;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: transparent;
+  }
+  
+  select {
+      height: @seach-input-wrapper-height*0.75;
+      background-color: transparent;
+      border: 1px solid @grey;
+      border-radius: 5px;
+      padding:0 @content-padding*1.3;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+  }
+
+
+  /* define a fixed width for the entire menu */
+.navigation {
+  width: 150px;
+  position: relative;
+  z-index: 50000;
+}
+
+/* reset our lists to remove bullet points and padding */
+.mainmenu, .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mainmenu  {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.submenu {
+  width: 200px;
+  border-radius: 5px;
+  background-color: @color-white;
+  box-shadow: @box-shadow ;
+}
+
+/* make ALL links (main and submenu) have padding and background color */
+.mainmenu a {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.mainmenu .submenu {
+  height: 0;
+}
+
+.mainmenu .submenu li {
+  border-bottom: 1px solid black;
+  
+}
+
+.mainmenu .submenu li:last-child {
+  border: none;
+}
+
+.mainmenu .submenu li:first-child {
+  color: black;
+  font-weight: 700;
+}
+
+/* add hover behaviour */
+.mainmenu a:hover {
+  
+}
+
+
+/* when hovering over a .mainmenu item,
+  display the submenu inside it.
+  we're changing the submenu's max-height from 0 to 200px;
+*/
+
+.mainmenu li:hover .submenu {
+  display: inline-block;
+  height: 200px;
+}
+
+/*
+  we now overwrite the background-color for .submenu links only.
+  CSS reads down the page, so code at the bottom will overwrite the code at the top.
+*/
+
+.submenu a {
+  background-color: @color-white;
+}
+
+/* hover behaviour for links inside .submenu */
+.submenu a:hover {
+  background-color: @hover;
+}
+
+/* this is the initial state of all submenus.
+  we set it to max-height: 0, and hide the overflowed content.
+*/
+.submenu {
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-out;
+}
+
+
+
+
+/* ------------------------------------------------------------------------------- */
+
+
+  
+  /* search icon */
+  @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+  
+  .search {
+    position: relative;
+    height: @seach-input-wrapper-height;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: 0;
+    width: 100%;
+    transition: all .15s ease;
+  }
+ 
+  .search input {
+    height: @seach-input--height;
+    text-indent: @baseline*3 !important;
+    background-color: transparent;
+    border: 1px solid @grey;
+    border-radius: 5px;
+    box-shadow: @box-shadow;
+    transition: @transition;
+  }
+
+  .search input { 
+    text-indent: 30px;
+  }
+
+  .search .fa-search { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: @grey;
+    margin-left: @content-padding*0.5;
+    margin-top: @content-padding*1.1;
+  }
