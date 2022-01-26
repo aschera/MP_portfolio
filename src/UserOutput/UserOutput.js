@@ -4,37 +4,39 @@ import './UserOutput.css';
 const UserOutput = ( props ) => {
 
     const ul = document.getElementById('output');
-    
+
     return (
         <div className="UserOutput">
 
            <ul id="output" className="Output">
-             {props.output.map(function(item) { 
+             {props.output.map(function(item) {
+
+                 console.log(item)
 
                 try {
                     let li = createNode(
-                    'li', 
-                    'output-li', 
-                    item.id, 
-                    item.fields.opening_crawl, 
-                    item.fields.title,
-                    item.fields.director
-                    ), 
+                    'li',
+                    'output-li',
+                    item.id,
+                    item.opening_crawl,
+                    item.title,
+                    item.director
+                    ),
 
                     id = createNode('span', 'output-span'),
                     title = createNode('span', 'output-span'),
                     date = createNode('span', 'output-span');
 
-                    id.innerHTML = ` Episode ${item.fields.episode_id} `; 
-                    title.innerHTML = ` ${item.fields.title}  `; 
-                    date.innerHTML = ` ${item.fields.release_date}`; 
-                   
-                   
-                    
+                    id.innerHTML = ` Episode ${item.episode_id} `;
+                    title.innerHTML = ` ${item.title}  `;
+                    date.innerHTML = ` ${item.release_date}`;
+
+
+
                     append(li, id);
                     append(li, title);
                     append(li, date);
-                    append(ul, li);  
+                    append(ul, li);
 
                     return true
                 }
@@ -42,8 +44,8 @@ const UserOutput = ( props ) => {
                     console.error(error);
                     return false
                 }
-               
-                    
+
+
              })}
            </ul>
 
@@ -70,12 +72,12 @@ function createNode(element, elClass, id, summary, title, director) {
 
 function editUldDetails(t, s, d) {
     const summary = document.getElementById('description-text');
-    summary.innerHTML = `<h2 class="h1">${t}</h2> <p>${s}</p> <p>Directed by: ${d}</p>`; 
+    summary.innerHTML = `<h2 class="h1">${t}</h2> <p>${s}</p> <p>Directed by: ${d}</p>`;
 }
 
 /* ------ create list of nodes ------ */
 function append(parent, el) {
-    return parent.appendChild(el); 
+    return parent.appendChild(el);
 }
 
 export default UserOutput;

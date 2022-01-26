@@ -4,16 +4,14 @@ import UserInput from './UserInput/UserInput';
 import UserOutput from './UserOutput/UserOutput';
 
 
-
-
 class App extends Component {
   state = {
     title: 'Star wars movies',
     input : '',
     list : [],
     movieInfo: 'No movie selected',
-  filterOptions : [ 'Sort by...', 'Episode', 'Year'],
-    url : 'https://star-wars-api.herokuapp.com/films'
+    filterOptions : [ 'Sort by...', 'Episode', 'Year'],
+    url : 'https://swapi.dev/api/films/'
   }
 
 
@@ -30,7 +28,7 @@ class App extends Component {
     } catch (e) {
       console.log('error ' + e)
     }
-	  
+
   }
 
   filterListHandler = (e) => {
@@ -54,8 +52,8 @@ class App extends Component {
       } )
 
       result = data.sort(function (a, b) {
-        let current = a.fields[currentFilter].slice(0, 4);
-        let next = b.fields[currentFilter].slice(0, 4);
+        let current = a[currentFilter].slice(0, 4);
+        let next = b[currentFilter].slice(0, 4);
         return current - next;
       });
     }
@@ -68,19 +66,19 @@ class App extends Component {
       } )
 
       result = data.sort(function (a, b) {
-        return a.fields[currentFilter] - b.fields[currentFilter];
+        return a[currentFilter] - b[currentFilter];
       });
     }
 
-    this.setState( { 
+    this.setState( {
       list : result
     } )
 
   }
 
   listChangeHandler = (data) => {
-    this.setState( { 
-      list : data
+    this.setState( {
+      list : data.results
     } )
     this.RunWhenCreated();
   }
@@ -98,13 +96,13 @@ class App extends Component {
 
     /*
     let query = document.getElementById('filter')
-    query.innerHTML = ` ${currentFilter} <i class="fas fa-times"></i>`; 
-    query.setAttribute("style", 
+    query.innerHTML = ` ${currentFilter} <i class="fas fa-times"></i>`;
+    query.setAttribute("style",
     "color:red; border: 1px solid blue; padding: 0.7em");
     */
- 
+
     for (let i = 0; i < data.length; i++) {
-      var str = data[i].fields.title;
+      var str = data[i].title;
       str = str.toLowerCase();
       var n = str.search(currentFilter);
       if(n !== -1) {
@@ -124,7 +122,7 @@ class App extends Component {
 
   api() {
     let _this = this;
-    fetch(this.state.url) 
+    fetch(this.state.url)
     .then((resp) => resp.json())
     .then(function(data) {
       _this.listChangeHandler(data);
@@ -133,10 +131,10 @@ class App extends Component {
       console.log(e)
     });
   }
-  
+
 
   render () {
-    
+
     return (
       <div className="App">
 
@@ -145,23 +143,23 @@ class App extends Component {
         <div className="ActiveFilter">
           <span id="filter"></span>
         </div>
-       
-        <UserInput 
+
+        <UserInput
         InputName         = {this.inputChangedHandler}
-        input             = {this.state.input} 
+        input             = {this.state.input}
         filterOptions     = {this.state.filterOptions}
         filterListHandler = {this.filterListHandler} />
 
-        <UserOutput 
-        output            = {this.state.list} 
+        <UserOutput
+        output            = {this.state.list}
         movieInfo         = {this.state.movieInfo}
         createNode        = {this.state.createNode}
         append            = {this.state.append}
-        />  
+        />
 
       </div>
     );
-    
+
   }
 }
 
