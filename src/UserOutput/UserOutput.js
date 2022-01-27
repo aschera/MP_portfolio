@@ -4,20 +4,22 @@ import './UserOutput.css';
 const UserOutput = ( props ) => {
 
     const ul = document.getElementById('output');
+    const loading = props.loading;
+
 
     return (
         <div className="UserOutput">
 
+        <h3 className="loading-text">{loading ? 'Loading the data! ...' : ''}</h3>
+
            <ul id="output" className="Output">
              {props.output.map(function(item) {
-
-                 console.log(item)
 
                 try {
                     let li = createNode(
                     'li',
                     'output-li',
-                    item.id,
+                    item.episode_id,
                     item.opening_crawl,
                     item.title,
                     item.director
@@ -28,10 +30,9 @@ const UserOutput = ( props ) => {
                     date = createNode('span', 'output-span');
 
                     id.innerHTML = ` Episode ${item.episode_id} `;
+
                     title.innerHTML = ` ${item.title}  `;
                     date.innerHTML = ` ${item.release_date}`;
-
-
 
                     append(li, id);
                     append(li, title);
@@ -50,7 +51,9 @@ const UserOutput = ( props ) => {
            </ul>
 
            <div className="description">
-             <div id="description-text">{props.movieInfo}</div>
+
+            <div id="description-text">{loading ? '' : `${props.movieInfo}` }</div>
+
            </div>
 
 
@@ -58,21 +61,26 @@ const UserOutput = ( props ) => {
     )
 };
 
-function createNode(element, elClass, id, summary, title, director) {
+function createNode(element, elClass, id, title, summary, director) {
     let el = document.createElement(element);
     el.classList.add(elClass);
-    el.setAttribute("id", id);
     if(summary) {
         el.addEventListener("click", function(e) {
-            editUldDetails(title, summary, director)
+            editUldDetails(id, title, summary, director)
         }, false);
     }
     return el
 }
 
-function editUldDetails(t, s, d) {
+function editUldDetails(i, s, t, d) {
     const summary = document.getElementById('description-text');
-    summary.innerHTML = `<h2 class="h1">${t}</h2> <p>${s}</p> <p>Directed by: ${d}</p>`;
+    summary.innerHTML = `
+    <h2>Summary</h2>
+    <p>${s}</p>
+    <hr>
+    <p>Episode nr: ${i}</p>
+    <p>Title: ${t}</p>
+    <p>Directed by: ${d}</p>`;
 }
 
 /* ------ create list of nodes ------ */

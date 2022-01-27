@@ -5,30 +5,22 @@ import UserOutput from './UserOutput/UserOutput';
 
 
 class App extends Component {
+
   state = {
     title: 'Star wars movies',
     input : '',
     list : [],
+    loading: true,
     movieInfo: 'No movie selected',
     filterOptions : [ 'Sort by...', 'Episode', 'Year'],
     url : 'https://swapi.dev/api/films/'
   }
-
 
   componentDidMount() {
     this.api();
   }
 
   RunWhenCreated(){
-  var ttt = document.getElementsByClassName('output-li');
-    try {
-      for (let i=0;i<ttt.length;i++){
-        ttt[i].addEventListener('click', this.editUldDetails(this), false);
-      }
-    } catch (e) {
-      console.log('error ' + e)
-    }
-
   }
 
   filterListHandler = (e) => {
@@ -76,13 +68,6 @@ class App extends Component {
 
   }
 
-  listChangeHandler = (data) => {
-    this.setState( {
-      list : data.results
-    } )
-    this.RunWhenCreated();
-  }
-
   inputChangedHandler = (event) => {
 
     let currentFilter = event.target.value;
@@ -94,12 +79,12 @@ class App extends Component {
     /* clear list in DOM*/
     document.getElementById('output').innerHTML = '';
 
-    /*
+
     let query = document.getElementById('filter')
     query.innerHTML = ` ${currentFilter} <i class="fas fa-times"></i>`;
     query.setAttribute("style",
     "color:red; border: 1px solid blue; padding: 0.7em");
-    */
+
 
     for (let i = 0; i < data.length; i++) {
       var str = data[i].title;
@@ -121,14 +106,19 @@ class App extends Component {
   }
 
   api() {
-    let _this = this;
-    fetch(this.state.url)
-    .then((resp) => resp.json())
-    .then(function(data) {
-      _this.listChangeHandler(data);
+    // read all entities
+    fetch(this.state.url, {
+      "method": "GET"
     })
-    .catch(function(e) {
-      console.log(e)
+    .then(response => response.json())
+    .then(response => {
+      this.setState( {
+        loading: false,
+        list : response.results
+      } )
+      this.RunWhenCreated();
+    })
+    .catch(err => { console.log(err);
     });
   }
 
@@ -151,6 +141,7 @@ class App extends Component {
         filterListHandler = {this.filterListHandler} />
 
         <UserOutput
+        loading           = {this.state.loading}
         output            = {this.state.list}
         movieInfo         = {this.state.movieInfo}
         createNode        = {this.state.createNode}
