@@ -15,13 +15,21 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
+
       <Routes>
         <Route path="/" element={<Nav />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
         </Route>
       </Routes>
+
+
+      <footer className="footer-bar">
+        <Nav />
+      </footer>
+
     </BrowserRouter>
+
     );
   }
 
