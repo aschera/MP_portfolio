@@ -88,10 +88,7 @@ video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  font-family: Helvetica, Arial, sans-serif;
-  color: #47596D;
   vertical-align: baseline;
-  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -129,32 +126,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* ----------------------------------------------- */
-/* ----------------------------------------------- */
-.App {
-  text-align: center;
-  max-width: 980px;
-  min-width: 490px;
-  margin: 0 auto;
-  padding: 0 1em;
-  line-height: 2em;
-  transition: all 0.15s ease;
+/* ------------------------------------------------- */
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-@media screen and (min-width: 767px) {
-  .App {
-    padding: 0 0.5em;
-  }
-}
-.title {
-  margin-top: 2em;
-}
-.ActiveFilter span {
-  width: 100px;
-  min-height: 0;
-}
-.fa-times {
-  padding-left: 1.5em;
-}
+/* -------------------------------------- */
+/* --------------------------------------------------------------- */
 h1,
 h2,
 h3,
@@ -322,6 +302,9 @@ h6,
   font-size: 1em;
 }
 p {
-  margin: 0 0 10px;
-  line-height: 1.15;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  word-spacing: 0.16em;
+  margin-bottom: 2em;
 }
