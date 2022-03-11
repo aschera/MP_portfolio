@@ -32,7 +32,4 @@ The instructional technology page tells the visitor about your theory and practi
 -
 The page on extracurricular activities speaks for itself; this is where you may add your golf score or passion for skiing.
 
--
-The blog page is where you express your ideas or write about something you have achieved that can help others.#� �M�P�_�p�o�r�t�f�o�l�i�o�
-�
-�
+
