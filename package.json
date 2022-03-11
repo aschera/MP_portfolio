@@ -10,7 +10,8 @@
     "react": "^16.0.0-rc.3",
     "react-dom": "^16.0.0-rc.3",
     "react-router-dom": "^6.2.2",
-    "react-scripts": "1.0.13"
+    "react-scripts": "1.0.13",
+    "styled-components": "^5.3.3"
   },
   "scripts": {
     "build-css": "node-sass src/ -o src/",
