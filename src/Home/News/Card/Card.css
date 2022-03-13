@@ -206,10 +206,46 @@ a {
   padding: 0;
   margin: 0;
   opacity: 1;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 .card-link:hover,
 a:hover {
   color: #042f6f;
+}
+/*  ---------hero title: text on fullwidth image----------------------- */
+.hero-title {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-top: 1rem;
+  width: calc(100% - 4rem);
+  max-width: 25rem;
+  min-height: 175px;
+  padding: 2rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  background-color: #f2f7f9;
+}
+/*  ---------title between sections on a page ----------------------- */
+.section-title {
+  margin: 4rem 0 4rem 0;
+  text-align: center;
+  width: 100%;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 4rem;
+  font-weight: 700;
 }
 .card-list {
   width: 100%;
@@ -264,6 +300,9 @@ li.item > div {
   margin: 0;
   border: 1px solid rgba(30, 41, 51, 0.85);
   border-left: 5px solid #042f6f;
+  height: 100%;
+  max-height: 50vh;
+  overflow: auto;
 }
 .list-title {
   color: #042f6f;
@@ -338,4 +377,35 @@ li.item > div {
   letter-spacing: 0;
   padding: 0;
   margin: 0;
+}
+/* --------------------------------------- */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px rgba(30, 41, 51, 0.1);
+  border-radius: 1px;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(30, 41, 51, 0.1);
+  border-radius: 1px;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #042f6f;
 }

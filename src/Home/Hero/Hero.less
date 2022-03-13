@@ -6,7 +6,7 @@
     position: relative;
     width: 100vw;
     height: 50vh;
-    min-height: 675px;
+    min-height: 655px;
  }
  .hero::before {
     content: "";
@@ -19,7 +19,6 @@
     filter: brightness(60%);
  }
 
-
  .hero-content {
     .flex(@direction:column, @justify: flex-end, @content: flex-end, @align: flex-start, @wrap: wrap);
     position: absolute;
@@ -28,22 +27,6 @@
     color: white;
     text-align: center;
     margin: 0.625rem;
- }
-
- .hero-title {
-   .flex(@direction:column, @justify: center, @content: center, @align: center, @wrap: wrap);
-  font-size: 1.4rem;
-  font-family: @font-familyL;
-  font-weight: 400;
-  line-height: 1.4;
-  margin-top: 1rem;
-  width: calc(100% - 4rem);
-  max-width: 25rem;
-  min-height: 175px;
-  padding: 2rem;
-  margin-bottom: 4rem;
-  margin-top: 4rem;
-  background-color: #f2f7f9;
  }
 
  .social {
@@ -61,6 +44,10 @@
           fill: @color-orange;
          width: 25px;
          height: 25px;
+         -webkit-transition: all 0.25s linear;
+         -moz-transition: all  0.25s linear;
+         -o-transition: all  0.25s linear;
+         transition: all  0.25s linear;
        }
 
        svg:hover {

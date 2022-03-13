@@ -12,7 +12,7 @@
   position: relative;
   width: 100vw;
   height: 50vh;
-  min-height: 675px;
+  min-height: 655px;
 }
 .hero::before {
   content: "";
@@ -39,28 +39,6 @@
   color: white;
   text-align: center;
   margin: 0.625rem;
-}
-.hero-title {
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
-  -ms-flex-flow: column wrap;
-  flex-flow: column wrap;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  font-family: 'Libre Baskerville', serif;
-  font-weight: 400;
-  line-height: 1.4;
-  margin-top: 1rem;
-  width: calc(100% - 4rem);
-  max-width: 25rem;
-  min-height: 175px;
-  padding: 2rem;
-  margin-bottom: 4rem;
-  margin-top: 4rem;
-  background-color: #f2f7f9;
 }
 .social {
   display: -ms-flexbox;
@@ -91,6 +69,10 @@
   fill: #f17c0b;
   width: 25px;
   height: 25px;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 .social .social-icon svg:hover {
   fill: #042f6f;

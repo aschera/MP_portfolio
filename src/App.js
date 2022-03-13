@@ -22,7 +22,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter className="main">
 
       <Routes>
         <Route path="/" element={<Nav />}>
