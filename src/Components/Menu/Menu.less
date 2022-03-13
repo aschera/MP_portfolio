@@ -1,0 +1,39 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+
+.navigation {
+    .flex(@direction:row, @justify: flex-start, @content: flex-start, @align: flex-start, @wrap: wrap);
+
+    nav {
+        .flex(@direction:row, @justify: space-between, @content: flex-start, @align: flex-start, @wrap: wrap);
+        width: 100%;
+    }
+
+    .main-menu {
+        .flex(@direction:row, @justify: flex-end, @content: flex-start, @align: flex-start, @wrap: wrap);
+        padding :1rem;
+
+
+
+  @media (min-width: 700px) {
+    width: calc(100% - 8rem);
+   }
+    }
+
+    .menu-item {
+        .flex(@direction:column, @justify: center, @content: center, @align: center);
+        margin-right: 2rem;
+        height: 2rem;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+}
+
+.heading {
+    .flex(@direction:column, @justify: flex-start, @content: flex-start, @align: flex-start, @wrap: wrap);
+    padding: 1rem;
+}

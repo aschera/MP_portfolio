@@ -1,0 +1,22 @@
+
+  .flex(@direction:row, @justify: center, @content: center, @align: center, @wrap: wrap) {
+    display: -ms-flexbox;
+    display: flex;
+
+    flex-direction: @direction;
+
+    -ms-flex-flow: @direction @wrap;
+    flex-flow: @direction @wrap;
+
+    align-items: @align;
+    align-content: @content;
+    justify-content: @justify;
+  }
+
+
+  .truncate(@width: 200px) {
+    width: @width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

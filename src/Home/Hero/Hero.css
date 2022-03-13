@@ -1,0 +1,97 @@
+/* -------------------------------------- */
+/* --------------------------------------------------------------- */
+.hero {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  min-height: 675px;
+}
+.hero::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/images/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  filter: brightness(60%);
+}
+.hero-content {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  align-content: flex-end;
+  justify-content: flex-end;
+  position: absolute;
+  right: 10vw;
+  font-family: 'Libre Baskerville', serif;
+  color: white;
+  text-align: center;
+  margin: 0.625rem;
+}
+.hero-title {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-top: 1rem;
+  width: calc(100% - 4rem);
+  max-width: 25rem;
+  min-height: 175px;
+  padding: 2rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  background-color: #f2f7f9;
+}
+.social {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin: 1rem 0 0 0;
+}
+.social .social-icon {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+.social .social-icon svg {
+  fill: #f17c0b;
+  width: 25px;
+  height: 25px;
+}
+.social .social-icon svg:hover {
+  fill: #042f6f;
+}

@@ -1,0 +1,122 @@
+@import "../../../styles/base";
+@import "../../../styles/variables";
+@import "../../../styles/typography";
+@import "../../../styles/mixins";
+
+.card-list {
+  width: 100%;
+}
+
+.band {
+  .flex(@direction:row, @justify: center, @content: flex-start, @align: stretch, @wrap: wrap);
+  margin: 0 auto;
+  padding: .5rem 1rem;
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+
+li.item {
+  width: 350px;
+  text-decoration: none;
+  min-height: 100%;
+  background: @color-white;
+  margin-right: 1rem;
+  margin-bottom: 4rem;
+  min-width: 20vw;
+
+  @media screen and (max-width: 1150px) {
+    width: 45%;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+li.item >div {
+  .flex(@direction:column, @justify: flex-start, @content: flex-start, @align: flex-start, @wrap: nowrap);
+  background: @color-white;
+  margin: 0;
+  border: 1px solid rgba(30,41,51,0.85);
+  border-left: 5px solid @color-blue;
+}
+
+.list-title {
+  color: @color-blue;
+  margin-bottom: 0.5rem;
+  padding-left:0.5rem;
+  font-family: @font-familyL;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.card {
+  margin-bottom: 1.5rem;
+  padding: .5rem;
+}
+
+.card-heading {
+  .flex(@direction:row, @justify: space-between, @content: space-between, @align: space-between, @wrap: nowrap);
+  .truncate(20vw);
+  margin-bottom: .25rem;
+  padding: 0;
+}
+
+.card-heading-name {
+  font-family: @font-familyL;
+  font-size: 10px;
+  letter-spacing: .75;
+  text-transform: uppercase;
+  padding: 0;
+  margin:0;
+}
+
+.card-heading-author {
+  font-family: @font-familyL;
+  font-size: 10px;
+  letter-spacing: .85;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0.45rem 0 1rem 0;
+}
+
+
+.card-heading-date {
+  font-family: @font-familyL;
+  font-size: 10px;
+  letter-spacing: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.card-heading-title {
+  font-family: @font-familyC;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 20px;
+  letter-spacing: 0;
+  padding: 0;
+  margin:0;
+}
+
+.card-heading-title:before
+{
+content: '\201C';
+}
+
+.card-heading-title:after
+{
+content: '\201D';
+}
+
+.card-heading-subtitle {
+  font-family: @font-familyL;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0;
+  padding: 0;
+  margin:0;
+}

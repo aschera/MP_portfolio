@@ -1,0 +1,15 @@
+/* -------------------------------------- */
+/* --------------------------------------------------------------- */
+.presentations {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  font-family: 'Libre Baskerville', serif;
+  color: white;
+}

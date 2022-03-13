@@ -1,0 +1,60 @@
+/* -------------------------------------- */
+/* --------------------------------------------------------------- */
+.navigation {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+.navigation nav {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+.navigation .main-menu {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+.navigation .menu-item {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-right: 2rem;
+  height: 2rem;
+}
+.navigation .menu-item:last-of-type {
+  margin-right: 0;
+}
+.heading {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+  padding: 1rem;
+}

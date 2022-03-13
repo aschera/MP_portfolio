@@ -1,0 +1,78 @@
+/* -------------------------------------- */
+/* --------------------------------------------------------------- */
+/*  ---------heading font options------------------------ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Cagliostro', sans-serif;
+}
+h1,
+.title,
+.subtitle {
+  font-family: 'Libre Baskerville', serif;
+  color: #042f6f;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+h4 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+/*  ---------heading colors------------------------ */
+h1 {
+  color: #042f6f;
+}
+h2 {
+  color: grey;
+}
+h3 {
+  color: grey;
+}
+h4 {
+  color: #042f6f;
+}
+/*  ---------heading spacing----------------------- */
+h1,
+.title,
+.subtitle {
+  padding-left: 1rem;
+  margin: 0;
+}
+h4 {
+  text-align: left;
+  margin: 0 0 1rem 0;
+  padding: 0 0 0 1rem;
+}
+/*  ---------paragraph text----------------------- */
+p,
+span {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  word-spacing: 0.16em;
+  margin-bottom: 2em;
+}
+/*  ---------links----------------------- */
+.card-link,
+a {
+  color: #f17c0b;
+  font-size: 18px;
+  letter-spacing: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+}
+.card-link:hover,
+a:hover {
+  color: #042f6f;
+}

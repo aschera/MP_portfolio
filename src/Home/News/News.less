@@ -1,0 +1,32 @@
+@import "../../styles/base";
+@import "../../styles/variables";
+@import "../../styles/typography";
+@import "../../styles/mixins";
+
+.banner {
+  .flex(@direction:column, @justify: flex-start, @content: flex-start, @align: flex-start, @wrap: wrap);
+  padding: 1rem;
+
+  ul {
+    .flex(@direction:row, @justify: flex-start, @content: flex-start, @align: flex-start, @wrap: wrap);
+    padding: 1rem;
+  }
+
+  li {
+    font-size: 20px;
+    padding: 1rem;
+  }
+}
+
+.section-title {
+  margin: 2rem 0 4rem 0;
+  text-align: center;
+  width: 100%;
+  font-family: @font-familyL;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.news-section {
+  width: 100%;
+}
