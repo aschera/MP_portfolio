@@ -5,6 +5,7 @@ const Hero = (props) => {
   return (
     <div>
       <section className="hero">
+
         <div className="hero-content">
           <h2 className="hero-title">
             Dr Miquel Pericas is an educator and researcher.
@@ -64,6 +65,7 @@ const Hero = (props) => {
             </div>
           </h2>
         </div>
+
       </section>
     </div>
   );

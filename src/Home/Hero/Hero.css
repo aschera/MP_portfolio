@@ -1,57 +1,6 @@
 /* -------------------------------------- */
 /* --------------------------------------------------------------- */
-.hero {
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
-  -ms-flex-flow: column wrap;
-  flex-flow: column wrap;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  position: relative;
-  width: 100vw;
-  height: 50vh;
-  min-height: 655px;
-}
-.hero::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: url(../../assets/images/hero.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-  filter: brightness(60%);
-}
-.hero-content {
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
-  -ms-flex-flow: column wrap;
-  flex-flow: column wrap;
-  align-items: flex-start;
-  align-content: flex-end;
-  justify-content: flex-end;
-  position: absolute;
-  right: 10vw;
-  font-family: 'Libre Baskerville', serif;
-  color: white;
-  text-align: center;
-  margin: 0.625rem;
-}
-.social {
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: row;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  margin: 1rem 0 0 0;
-}
-.social .social-icon {
+.social-icon {
   display: -ms-flexbox;
   display: flex;
   flex-direction: row;
@@ -64,16 +13,181 @@
   height: 40px;
   margin-right: 0.5rem;
   cursor: pointer;
-}
-.social .social-icon svg {
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear; }
+
+.social-icon svg {
   fill: #f17c0b;
   width: 25px;
   height: 25px;
   -webkit-transition: all 0.25s linear;
   -moz-transition: all 0.25s linear;
   -o-transition: all 0.25s linear;
-  transition: all 0.25s linear;
-}
-.social .social-icon svg:hover {
-  fill: #042f6f;
-}
+  transition: all 0.25s linear; }
+
+.social-icon svg:hover {
+  fill: #042f6f; }
+
+/*  ---------------------------------------------- */
+/*  ---------mobile things----------------------- */
+@media screen and (max-width: 800px) {
+  .hero {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    height: 20vh;
+    width: 100vw;
+    min-height: 355px;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
+  .hero::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: url(../../assets/images/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+    filter: brightness(60%);
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
+  .hero-content {
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    bottom: -3em;
+    left: 0;
+    display: flex;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
+  .hero-title {
+    font-size: 1.1rem;
+    padding: 1rem;
+    color: #28405D;
+    background-color: #fff;
+    border-bottom: 1px solid #28405D;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
+  .social {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear; } }
+
+/*  ---------------------------------------------- */
+/*  ---------desktop things----------------------- */
+@media screen and (min-width: 801px) {
+  .hero {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    min-height: 655px;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
+  .hero::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: url(../../assets/images/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    filter: brightness(60%);
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
+  .hero-content {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    align-content: flex-end;
+    justify-content: flex-end;
+    position: absolute;
+    right: 10vw;
+    font-family: 'Libre Baskerville', serif;
+    color: #fff;
+    text-align: center;
+    margin: 0.625rem;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
+  .social {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 1rem 0 0 0;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
+  .hero-title {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-top: 1rem;
+    width: calc(100% - 4rem);
+    max-width: 25rem;
+    min-height: 175px;
+    padding: 2rem;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    background-color: #f2f7f9;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear; } }

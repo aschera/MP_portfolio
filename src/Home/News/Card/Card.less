@@ -57,8 +57,13 @@ li.item >div {
 }
 
 .card {
-  margin-bottom: 1.5rem;
-  padding: .5rem;
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+
+  &:last-of-type {
+    .divider {
+      display: none;
+    }
+  }
 }
 
 .card-heading {
@@ -75,6 +80,14 @@ li.item >div {
   text-transform: uppercase;
   padding: 0;
   margin:0;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all  0.25s linear;
+  -o-transition: all  0.25s linear;
+  transition: all  0.25s linear;
+
+  @media screen and (max-width: 800px) {
+    font-size: 13px;
+  }
 }
 
 .card-heading-author {
@@ -84,22 +97,40 @@ li.item >div {
   text-transform: uppercase;
   padding: 0;
   margin: 0.45rem 0 1rem 0;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all  0.25s linear;
+  -o-transition: all  0.25s linear;
+  transition: all  0.25s linear;
+
+  @media screen and (max-width: 800px) {
+    font-size: 13px;
+  }
 }
 
 
-.card-heading-date {
+.card-heading-date,
+.card-heading-amount {
   font-family: @font-familyL;
   font-size: 10px;
   letter-spacing: 0;
   padding: 0;
   margin-bottom: 1rem;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all  0.25s linear;
+  -o-transition: all  0.25s linear;
+  transition: all  0.25s linear;
+
+  @media screen and (max-width: 800px) {
+    font-size: 13px;
+  }
+
 }
 
 .card-heading-title {
   font-family: @font-familyC;
   text-transform: uppercase;
   line-height: 1;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0;
   padding: 0;
   margin:0;
@@ -118,12 +149,37 @@ content: '\201D';
 .card-heading-subtitle {
   font-family: @font-familyL;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 0;
   padding: 0;
   margin:0;
 }
 
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1rem auto 0 auto;
+  padding: 0;
+}
+
+/* To show the lines on right
+and left sides of the text */
+.divider::after,
+.divider::before {
+  content: "";
+  border: 0.5px solid rgba(30, 41, 51, 0.85);
+  flex: 1;
+}
+
+/* Space on left and right sides of text */
+.divider:not(:empty)::before {
+  margin-right: 0.25em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 0.25em;
+}
 
 
 /* --------------------------------------- */

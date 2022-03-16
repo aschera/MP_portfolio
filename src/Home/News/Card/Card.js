@@ -34,13 +34,17 @@ const Card = ( props ) => {
 
                     <p className="card-heading-subtitle">{i.text}</p>
 
-                    <p className="card-heading-date">{i.amount}</p>
-                    <br></br>
+                    {i.amount? (
+                      <p className="card-heading-amount">{i.amount}</p>
+                    ) : null}
+
                     {i.link ? (
                       <a href={i.link} target="_blank" className="card-link">
                         link
                       </a>
                     ) : null}
+
+                    <div className='divider'> &#128629; </div>
                   </div>
                 ))}
               </div>

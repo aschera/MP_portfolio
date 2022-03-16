@@ -88,8 +88,8 @@ video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -102,37 +102,37 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
-}
+  display: block; }
+
 body {
-  line-height: 1;
-}
+  line-height: 1; }
+
 ol,
 ul {
-  list-style: none;
-}
+  list-style: none; }
+
 blockquote,
 q {
-  quotes: none;
-}
+  quotes: none; }
+
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
   content: '';
-  content: none;
-}
+  content: none; }
+
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
+
 /* ------------------------------------------------- */
 ol,
 ul {
   list-style: none;
   padding: 0;
-  margin: 0;
-}
+  margin: 0; }
+
 /* -------------------------------------- */
 /* --------------------------------------------------------------- */
 /*  ---------heading font options------------------------ */
@@ -148,45 +148,45 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Cagliostro', sans-serif;
-}
+  font-family: 'Cagliostro', sans-serif; }
+
 h1,
 .title,
 .subtitle {
   font-family: 'Libre Baskerville', serif;
   color: #042f6f;
   font-size: 1.2rem;
-  font-weight: 700;
-}
+  font-weight: 700; }
+
 h4 {
   font-size: 1rem;
-  font-weight: 400;
-}
+  font-weight: 400; }
+
 /*  ---------heading colors------------------------ */
 h1 {
-  color: #042f6f;
-}
+  color: #042f6f; }
+
 h2 {
-  color: grey;
-}
+  color: grey; }
+
 h3 {
-  color: grey;
-}
+  color: grey; }
+
 h4 {
-  color: #042f6f;
-}
+  color: #042f6f; }
+
 /*  ---------heading spacing----------------------- */
 h1,
 .title,
 .subtitle {
   padding-left: 1rem;
-  margin: 0;
-}
+  margin: 0; }
+
 h4 {
   text-align: left;
   margin: 0 0 1rem 0;
-  padding: 0 0 0 1rem;
-}
+  padding: 0 0 0 1rem; }
+
 /*  ---------paragraph text----------------------- */
 p,
 span {
@@ -195,8 +195,8 @@ span {
   line-height: 1.5;
   letter-spacing: 0.12em;
   word-spacing: 0.16em;
-  margin-bottom: 2em;
-}
+  margin-bottom: 2em; }
+
 /*  ---------links----------------------- */
 .card-link,
 a {
@@ -206,34 +206,15 @@ a {
   padding: 0;
   margin: 0;
   opacity: 1;
-}
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear; }
+
 .card-link:hover,
 a:hover {
-  color: #042f6f;
-}
-/*  ---------hero title: text on fullwidth image----------------------- */
-.hero-title {
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
-  -ms-flex-flow: column wrap;
-  flex-flow: column wrap;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  font-family: 'Libre Baskerville', serif;
-  font-weight: 400;
-  line-height: 1.4;
-  margin-top: 1rem;
-  width: calc(100% - 4rem);
-  max-width: 25rem;
-  min-height: 175px;
-  padding: 2rem;
-  margin-bottom: 4rem;
-  margin-top: 4rem;
-  background-color: #f2f7f9;
-}
+  color: #042f6f; }
+
 /*  ---------title between sections on a page ----------------------- */
 .section-title {
   margin: 4rem 0 4rem 0;
@@ -241,8 +222,8 @@ a:hover {
   width: 100%;
   font-family: 'Libre Baskerville', serif;
   font-size: 4rem;
-  font-weight: 700;
-}
+  font-weight: 700; }
+
 .footer-bar {
   bottom: 0;
   left: 0;
@@ -251,9 +232,4 @@ a:hover {
   height: auto;
   height: 10vh;
   padding: 1rem 1rem 0 0;
-  color: #fff;
-}
-.main,
-body {
-  min-width: 425px;
-}
+  color: #fff; }
