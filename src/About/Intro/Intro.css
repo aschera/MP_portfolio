@@ -1,0 +1,41 @@
+.about-intro {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  align-content: flex-end;
+  justify-content: flex-end;
+  padding: 2em;
+  color: #292A2C;
+  font-size: 16px;
+  margin-bottom: 2rem;
+}
+.about-content {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  align-content: flex-end;
+  justify-content: flex-start;
+}
+.about-image {
+  background: url(../../assets/images/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
+  padding: 2em;
+  margin-right: 2em;
+  min-width: 30vw;
+  height: 40vh;
+}
+.about-intro .about-text p {
+  font-family: 'Cagliostro', sans-serif;
+  font-size: 18px;
+}
+.about-intro .about-text p b {
+  font-weight: 700;
+}

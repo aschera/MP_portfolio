@@ -36,11 +36,6 @@ class App extends Component {
         </Route>
       </Routes>
 
-
-      <footer className="footer-bar">
-      &copy; 2022 Miquel Pericas <Nav />
-      </footer>
-
     </BrowserRouter>
 
     );

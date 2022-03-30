@@ -1,12 +1,16 @@
 import React from 'react';
+
+import Nav from '../../Components/Nav/Nav';
+
 import './Section3.css';
 
 const Section3 = ( props ) => {
 
     return (
-      <div>
-        <h3 className='section-title'>Other news</h3>
-      </div>
+
+      <footer className="footer-bar">
+      &copy; 2022 Miquel Pericas <Nav />
+      </footer>
     );
 };
 

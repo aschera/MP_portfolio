@@ -1,9 +1,13 @@
 @import "../styles/mixins";
 @import "../styles/variables";
 
-.about{
+.about {
   .flex(@direction:column, @justify: center, @content: center, @align: flex-start, @wrap: wrap);
   width: 100%;
   font-family: @font-familyL;
-  color: white;
+  padding:  @content-padding ;
+}
+
+.about .list-title {
+  padding: 0;
 }

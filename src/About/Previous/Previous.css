@@ -1,0 +1,18 @@
+.about-previous {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  align-content: flex-end;
+  justify-content: flex-end;
+  padding: 2em;
+  color: #292A2C;
+  font-size: 16px;
+  margin-bottom: 2rem;
+}
+.about-previous .about-text p {
+  font-family: 'Cagliostro', sans-serif;
+  font-size: 18px;
+}

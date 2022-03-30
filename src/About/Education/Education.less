@@ -1,0 +1,23 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.about-education {
+  .flex(@direction:column, @justify: flex-end, @content: flex-end, @align: flex-start, @wrap: wrap);
+  padding:  @content-padding;
+  color: @color-black;
+  font-size: 16px;
+  margin-bottom: 2rem;
+}
+
+.about-content{
+  .flex(@direction:row, @justify: flex-start, @content: flex-end, @align: flex-start, @wrap: nowrap);
+}
+
+.about-education .about-text p {
+  font-family: @font-familyC;
+  font-size: 18px;
+
+  b {
+    font-weight: 700;
+  }
+}

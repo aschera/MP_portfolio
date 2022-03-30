@@ -1,0 +1,45 @@
+.about-teaching {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  align-content: flex-end;
+  justify-content: flex-end;
+  padding: 2em;
+  color: #292A2C;
+  font-size: 16px;
+  margin-bottom: 2rem;
+}
+.about-teaching .about-text p {
+  font-family: 'Cagliostro', sans-serif;
+  font-size: 18px;
+}
+.about-teaching .about-text ul {
+  display: block;
+  margin: 0;
+  padding: 0 0 0 1rem;
+  border-left: 5px solid #042f6f;
+}
+.about-teaching .about-text ul ul {
+  margin: 0 0 0 1rem;
+  border-left: none;
+}
+.about-teaching .about-text li {
+  margin: 0;
+  padding: 1rem 0 0 0;
+}
+.course-date {
+  display: inline-block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+.course-name {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #042f6f;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}

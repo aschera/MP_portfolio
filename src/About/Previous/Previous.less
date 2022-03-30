@@ -1,0 +1,15 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.about-previous {
+    .flex(@direction:column, @justify: flex-end, @content: flex-end, @align: flex-start, @wrap: wrap);
+    padding:  @content-padding;
+    color: @color-black;
+    font-size: 16px;
+    margin-bottom: 2rem;
+  }
+
+  .about-previous .about-text p {
+    font-family: @font-familyC;
+    font-size: 18px;
+  }

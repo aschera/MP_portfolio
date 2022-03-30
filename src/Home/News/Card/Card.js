@@ -12,8 +12,8 @@ const Card = ( props ) => {
               <h4 className='list-title'>{item.title}</h4>
 
               <div>
-                {item.list.map((i) => (
-                  <div className="card" key={i.name}>
+                {item.list.map((i, index) => (
+                  <div className="card" key={index}>
 
                     {i.published ? (
                       <p className="card-heading-name">

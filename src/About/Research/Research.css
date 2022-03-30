@@ -1,0 +1,54 @@
+.about-research {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  align-content: flex-end;
+  justify-content: flex-end;
+  padding: 2em;
+  color: #292A2C;
+  font-size: 16px;
+}
+.about-research .about-text p {
+  font-family: 'Cagliostro', sans-serif;
+  font-size: 18px;
+}
+.about-research .about-text h2 {
+  margin: 0 0 1rem 0;
+}
+.about-research .about-text p {
+  font-family: 'Cagliostro', sans-serif;
+  font-size: 18px;
+}
+.about-research .about-text ul {
+  display: block;
+  margin: 0 0 3rem 0;
+  padding: 0 0 1rem 1rem;
+  border-left: 5px solid #042f6f;
+}
+.about-research .about-text ul > li {
+  margin: 0 0 2rem 0;
+}
+.about-research .about-text ul > li:last-of-type {
+  margin-bottom: 0;
+}
+.about-research .about-text ul ul {
+  margin: 0 0 0 1rem;
+  padding: 0;
+  border-left: none;
+}
+.about-research .about-text ul ul li {
+  padding: 1rem 0 0 0;
+  margin: 0;
+}
+.about-research .about-text li > a {
+  line-height: 2.5;
+}
+.research-date {
+  display: inline-block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}

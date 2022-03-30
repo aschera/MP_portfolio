@@ -1,0 +1,31 @@
+.about-education {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  align-content: flex-end;
+  justify-content: flex-end;
+  padding: 2em;
+  color: #292A2C;
+  font-size: 16px;
+  margin-bottom: 2rem;
+}
+.about-content {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  align-content: flex-end;
+  justify-content: flex-start;
+}
+.about-education .about-text p {
+  font-family: 'Cagliostro', sans-serif;
+  font-size: 18px;
+}
+.about-education .about-text p b {
+  font-weight: 700;
+}

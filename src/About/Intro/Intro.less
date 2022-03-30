@@ -1,0 +1,34 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.about-intro {
+  .flex(@direction:column, @justify: flex-end, @content: flex-end, @align: flex-start, @wrap: wrap);
+  padding:  @content-padding;
+  color: @color-black;
+  font-size: 16px;
+  margin-bottom: 2rem;
+}
+
+.about-content{
+  .flex(@direction:row, @justify: flex-start, @content: flex-end, @align: flex-start, @wrap: nowrap);
+}
+
+.about-image {
+  background: url(../../assets/images/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
+  padding:  @content-padding;
+  margin-right:  @content-padding;
+  min-width: 30vw;
+  height: 40vh;
+}
+
+.about-intro .about-text p {
+  font-family: @font-familyC;
+  font-size: 18px;
+
+  b {
+    font-weight: 700;
+  }
+}
